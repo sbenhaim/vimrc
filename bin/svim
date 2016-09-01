@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+file = ARGV[0]
+line = "\n"
+if  file =~ /:\d+/
+	file, line = file.split(':')
+	line = "\n#{line}G"
+end
+
+%x{screen -p Vim -X stuff ":e #{File::expand_path( file )}#{line}"}

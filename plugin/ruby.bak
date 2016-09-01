@@ -1,0 +1,9 @@
+ruby << EOR
+module VIM
+
+  def VIM::[](exp)
+    return VIM::evaluate(exp)
+  end
+
+end
+EOR
